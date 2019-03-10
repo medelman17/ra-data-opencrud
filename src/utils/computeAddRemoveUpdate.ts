@@ -13,7 +13,9 @@ export const computeFieldsToRemove = (oldIds: ID[], newIds: ID[]) => {
 };
 
 export const computeFieldsToUpdate = (oldIds: ID[], newIds: ID[]) => {
-  return oldIds.filter(oldId => newIds.includes(oldId)).map(formatId);
+  return oldIds
+    ? oldIds.filter(oldId => newIds.includes(oldId)).map(formatId)
+    : [];
 };
 
 export const computeFieldsToAddRemoveUpdate = (oldIds: ID[], newIds: ID[]) => ({
